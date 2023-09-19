@@ -2,6 +2,10 @@ import os
 import asyncio
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix = "$", intents = intents)
@@ -39,7 +43,7 @@ async def main():
     async with bot:
         await load_extensions()
         # 機器人的TOKEN
-        await bot.start("")
+        await bot.start(TOKEN)
 
 # 確定執行此py檔才會執行
 if __name__ == "__main__":

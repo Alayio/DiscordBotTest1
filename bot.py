@@ -10,11 +10,8 @@ import keep_alive
 #讀取Token
 load_dotenv(dotenv_path="token.env")
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILDID_TOKEN = os.getenv('GUILDID_TOKEN')
-#讀取字典
-with open("item_dict.pkl", "rb") as tf:
-  item_dict = pickle.load(tf)
-wordlist = [word for word in item_dict]
+
+
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
